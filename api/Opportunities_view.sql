@@ -1,0 +1,8 @@
+CREATE VIEW Opportunities_View AS SELECT Opportunities.id AS OpportunityId, Customers.title, Customers.firstName, Customers.middleName, Customers.lastName, Opportunities.dateIn, Opportunities.source, Opportunities.subSource, Opportunities.status, Opportunities.subStatus, Opportunities.uptype, SoughtVehicles.id AS SoughtVehicleId, SoughtVehicles.isNew, SoughtVehicles.yearFrom, SoughtVehicles.yearTo, SoughtVehicles.make, SoughtVehicles.model, SoughtVehicles.carTrim, SoughtVehicles.vin, SoughtVehicles.priceFrom, SoughtVehicles.priceTo, SoughtVehicles.maxMileage, SoughtVehicles.stockNumber, SoughtVehicles.isPrimary, TradeIns.id AS TradeInId, TradeIns.carYear, TradeIns.make AS T_Make, TradeIns.model AS T_Model, TradeIns.carTrim AS T_Trim, TradeIns.vin AS T_Vin, TradeIns.estimatedMileage, TradeIns.interiorColor, TradeIns.exteriorColor, SalesTeams.id AS SalesTeamId, CONCAT(SalesTeams.firstName, ' ', SalesTeams.lastName) AS SalesName, SalesTeams.isPrimary AS SalesTeamIsPrimary, SalesTeams.isPositionPrimary, SalesTeams.positionName, SalesTeams.positionCode FROM Opportunities 
+LEFT JOIN Customers on (Opportunities.customer_id = Customers.id)
+LEFT JOIN Opportunity_SoughtVehicles on (Opportunities.id = Opportunity_SoughtVehicles.opportunityId)
+LEFT JOIN SoughtVehicles on (SoughtVehicles.id=Opportunity_SoughtVehicles.soughtVehicleId)
+LEFT JOIN Opportunity_TradeIns on (Opportunities.id = Opportunity_TradeIns.opportunityId)
+LEFT JOIN TradeIns on (TradeIns.id=Opportunity_TradeIns.tradeInId)
+LEFT JOIN Opportunity_SalesTeams on (Opportunities.id = Opportunity_SalesTeams.opportunityId)
+LEFT JOIN SalesTeams on (SalesTeams.id=Opportunity_SalesTeams.salesTeamsId) ORDER BY Opportunities.dateIn, Opportunities.id;
