@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+
+# Ignore .json files
+Activities.json
+Activities2.json
+ActivityOutcome.json
+Cust2.json
+Customer2.json
+Customers.json
+CustsA.json
+EmpNoDupes.json
+Employee2.json
+Employees.json
+Opp2.json
+OppStatus.json
+Oppo2.json
+Opportunities.json
+oppo.json
+
+# Ignore files related to API keys
+.env
