@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid')
 const fs = require('fs');
+import { getToken } from "./get_token";
 let data = '';
 
 const CLIENT_ID = "VfafEKLDRmUgOXl5D4YVFckiClXGgT3k";
@@ -15,11 +16,10 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 // Read employees
-let rawdata = fs.readFileSync('Employees.json');
-employeeData = rawdata.slice(0, -3) + ']}'
-resultsEmployee = JSON.parse(employeeData)
-fs.writeFileSync('Employee2.json', employeeData);
-console.log('Number of employees = ', resultsEmployee.data.length);
+let rawdata = fs.readFileSync('EmpNoDupes.json');
+resultsEmployee = JSON.parse(rawdata)
+console.log('Number of employees = ', resultsEmployee.length);
+// console.log(resultsEmployee);
 
 let step = 0
 let emp = 0
@@ -30,51 +30,25 @@ getActivities()
 
 async function getActivities() {
   try {
-    await await getToken()
+    await getToken()
   } catch (e) {
-    console.log('Line 40 - caught exception!', e);
+    console.log('Line 35 - caught exception!', e);
   }
 
   try {
     await getActivityTypes()
   } catch (e) {
-    console.log('Line 46 - caught exception!', e);
+    console.log('Line 41 - caught exception!', e);
   }
-
+  console.log(resultsEmployee[step]);
+  console.log(resultsEmployee[0]);
+  console.log(resultsEmployee.length);
   try {
-    for (step = 0; step < resultsEmployee.data.length - 1; step++) {
-      for (emp = 0; emp < resultsEmployee.data[step].items.length - 1; emp++) {
-        await getEmployeeActivities(resultsEmployee.data)
-      }
+    for (step = 0; step < resultsEmployee.length; step++) {
+      await getEmployeeActivities(resultsEmployee[step])
     }
   } catch (e) {
-    console.log('Line 54 - caught exception!', e);
-  }
-}
-
-async function getToken() {
-  let config = {
-    method: 'post',
-    url: 'https://identity.fortellis.io/oauth2/aus1p1ixy7YL8cMq02p7/v1/token?grant_type=client_credentials&scope=anonymous',
-    headers: {
-      'Accept': 'Application/json',
-      'Cache-Control': 'No-cache',
-      'Content-Type': 'Application/x-www-form-urlencoded',
-      'Authorization': `Basic ${token}`
-    },
-    data: data
-  };
-
-  try {
-    response = await axios(config)
-    bearerToken = response.data.access_token
-    // console.log('Line 68 - ', response.data);
-    localStorage.setItem('Bearer', bearerToken)
-    // console.log(JSON.stringify('Log 1', response.data));
-    // console.log('Log 2', response.data);
-    return response.data.access_token
-  } catch (e) {
-    console.log('Line 70 - caught exception!', e);
+    console.log('Line 51 - caught exception!', e);
   }
 }
 
@@ -102,10 +76,9 @@ async function getActivityTypes() {
 }
 
 async function getEmployeeActivities(results) {
-  // console.log(results[step].items[emp]);
   config = {
     method: 'get',
-    url: `https://api.fortellis.io/sales/v1/elead/activities/history/byUserId/${results[step].items[emp].id}?fromDate=05/01/2021&toDate=05/31/2021&activityTypes=[]&openActivitiesOnly=false`,
+    url: `https://api.fortellis.io/sales/v1/elead/activities/history/byUserId/${results.id}?fromDate=08/01/2021&toDate=08/31/2021&activityTypes=[]&openActivitiesOnly=false`,
     headers: {
       'Accept': '',
       'Accept-Charset': '',
@@ -119,10 +92,10 @@ async function getEmployeeActivities(results) {
   // console.log('Log 10', results.data[step].id);
   response = await axios(config)
   if (response.data.items.length != 0) {
-    console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
+    console.log(`Activity for ${results.firstName} ${results.lastName}`);
     ActivityData = ActivityData + JSON.stringify(response.data) + ','
   } else {
-    console.log('No Activity!');
+    console.log('No Activity for ', `${results.firstName} ${results.lastName}`);
   }
 
   fs.writeFileSync('Activities.json', ActivityData + ']}');

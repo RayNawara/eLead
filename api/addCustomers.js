@@ -4,11 +4,11 @@ const fs = require('fs');
 let step = 0
 
 // Read customers
-let rawdataCustomer = fs.readFileSync('Customers.json');
+let rawdataCustomer = fs.readFileSync('CustsA.json');
 customerData = rawdataCustomer.slice(0, -3) + ']}'
 resultsCust = JSON.parse(customerData)
 fs.writeFileSync('Customer2.json', customerData);
-console.log(resultsCust.items.length);
+console.log('Line 11 - Total Customers = ', resultsCust.items.length);
 
 try {
   addCustomers(resultsCust)
@@ -42,13 +42,13 @@ async function addCustomers(resultsCust) {
       // console.log('Line 39 - number of Customers = : ', resultsCust.items.length, resultsCust.items[0]);
       // console.log('Step = ', step);
       if ('address' in resultsCust.items[step]) {
-        let insertQuery = 'INSERT INTO ?? (??,??,??,??,??,??,??,??,??,??,??,??,??,??,??,??,??) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        let insertQuery = 'INSERT IGNORE INTO ?? (??,??,??,??,??,??,??,??,??,??,??,??,??,??,??,??,??) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
         let query = mysql.format(insertQuery, ["Customers", "id", "isBusiness", "title", "firstName", "middleName", "lastName", "nickname", "birthday", "addressLine1", "addressLine2", "city", "state", "zip", "country", "county", "doNotMail", "isPreferred", resultsCust.items[step].id, resultsCust.items[step].isBusiness, resultsCust.items[step].title, resultsCust.items[step].firstName, resultsCust.items[step].middleName, resultsCust.items[step].lastName, resultsCust.items[step].nickname, resultsCust.items[step].birthday, resultsCust.items[step].address.addressLine1, resultsCust.items[step].address.addressLine2, resultsCust.items[step].address.city, resultsCust.items[step].address.state, resultsCust.items[step].address.zip, resultsCust.items[step].address.country, resultsCust.items[step].address.county, resultsCust.items[step].doNotMail, resultsCust.items[step].isPreferred]);
 
         await connection.query(query)
 
       } else {
-        let insertQuery = 'INSERT INTO ?? (??,??,??,??,??,??,??,??,??,??) VALUES (?,?,?,?,?,?,?,?,?,?)';
+        let insertQuery = 'INSERT IGNORE INTO ?? (??,??,??,??,??,??,??,??,??,??) VALUES (?,?,?,?,?,?,?,?,?,?)';
         let query = mysql.format(insertQuery, ["Customers", "id", "isBusiness", "title", "firstName", "middleName", "lastName", "nickname", "birthday", "doNotMail", "isPreferred", resultsCust.items[step].id, resultsCust.items[step].isBusiness, resultsCust.items[step].title, resultsCust.items[step].firstName, resultsCust.items[step].middleName, resultsCust.items[step].lastName, resultsCust.items[step].nickname, resultsCust.items[step].birthday, resultsCust.items[step].doNotMail, resultsCust.items[step].isPreferred]);
 
         await connection.query(query)

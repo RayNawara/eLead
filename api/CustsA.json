@@ -1,0 +1,319 @@
+{
+  "items": [
+    {
+      "isBusiness": false,
+      "firstName": "TestCustFirstrjdez",
+      "middleName": "",
+      "lastName": "TestCustLastfvgob",
+      "emails": [
+        {
+          "address": "TestCustFirstrjdez@looptestemail.com",
+          "emailType": "Personal",
+          "doNotEmail": false,
+          "isPreferred": true
+        }
+      ],
+      "phones": [
+        {
+          "number": "(245) 555-5756",
+          "phoneType": "Cellular",
+          "preferredTimeToContact": "Evening",
+          "onDoNotCallRegistry": false
+        }
+      ],
+      "address": {
+        "city": "Clearwater",
+        "state": "FL",
+        "zip": "33760",
+        "country": "US"
+      },
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "caa491d3-f41f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/caa491d3-f41f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/caa491d3-f41f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+    {
+      "isBusiness": false,
+      "firstName": "Cmname",
+      "middleName": "",
+      "lastName": "Cmlast",
+      "emails": [
+        {
+          "address": "cmcovid19@cmcovid.cor",
+          "emailType": "Personal",
+          "doNotEmail": false,
+          "isPreferred": true
+        }
+      ],
+      "phones": [
+        {
+          "number": "(518) 368-1192",
+          "phoneType": "Cellular",
+          "preferredTimeToContact": "Evening",
+          "onDoNotCallRegistry": false
+        }
+      ],
+      "address": {
+        "zip": "12345"
+      },
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "dc003d0b-ee1f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/dc003d0b-ee1f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/dc003d0b-ee1f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+    {
+      "isBusiness": false,
+      "firstName": "Laura",
+      "middleName": "",
+      "lastName": "Moore",
+      "nickname": "",
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "5d16f0f4-c71f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/5d16f0f4-c71f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/5d16f0f4-c71f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+    {
+      "isBusiness": false,
+      "firstName": "test",
+      "lastName": "three",
+      "emails": [
+        {
+          "address": "t.three@mail.com",
+          "emailType": "Personal",
+          "doNotEmail": false,
+          "isPreferred": true
+        }
+      ],
+      "phones": [
+        {
+          "number": "(303) 987-9879",
+          "phoneType": "Cellular",
+          "preferredTimeToContact": "Unspecified",
+          "doNotCall": false,
+          "doNotText": true,
+          "preferCall": false,
+          "preferText": false,
+          "onDoNotCallRegistry": false
+        }
+      ],
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "fa1bc506-bf1f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/fa1bc506-bf1f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/fa1bc506-bf1f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+    {
+      "isBusiness": false,
+      "firstName": "Septembertwentyseventh",
+      "lastName": "Test1newwf",
+      "emails": [
+        {
+          "address": "SeptemberTwentySeventhNewWF1@fakegmail.com",
+          "emailType": "Personal",
+          "doNotEmail": false,
+          "isPreferred": true
+        }
+      ],
+      "phones": [
+        {
+          "number": "(858) 888-8888",
+          "phoneType": "Home",
+          "preferredTimeToContact": "Day",
+          "onDoNotCallRegistry": false
+        }
+      ],
+      "address": {
+        "city": "Encinitas",
+        "state": "CA",
+        "zip": "92024",
+        "country": "US"
+      },
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "ef27d96e-cd1f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/ef27d96e-cd1f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/ef27d96e-cd1f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+    {
+      "isBusiness": true,
+      "businessName": "Unknown",
+      "businessContact": "Unknown",
+      "phones": [
+        {
+          "number": "(234) 678-9089",
+          "phoneType": "Cellular",
+          "preferredTimeToContact": "Unspecified",
+          "doNotCall": false,
+          "doNotText": true,
+          "preferCall": false,
+          "preferText": false,
+          "onDoNotCallRegistry": false
+        }
+      ],
+      "privacySettings": [
+        {
+          "name": "CCPADoNotContact",
+          "value": "False"
+        },
+        {
+          "name": "CCPADoNotShare",
+          "value": "False"
+        }
+      ],
+      "id": "20261b42-921f-ec11-a995-005056b101d3",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/20261b42-921f-ec11-a995-005056b101d3",
+          "method": "GET",
+          "title": "Fetch Customer"
+        },
+        {
+          "rel": "create",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers",
+          "method": "POST",
+          "title": "Create Customer"
+        },
+        {
+          "rel": "update",
+          "href": "https://api.fortellis.io/sales/v1/elead/customers/20261b42-921f-ec11-a995-005056b101d3",
+          "method": "POST",
+          "title": "Update Customer"
+        }
+      ]
+    },
+  ]
+}

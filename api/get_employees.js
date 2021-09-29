@@ -17,7 +17,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 
 let step = 0
 let bearerToken, response
-let EmployeeData = '{"data": ['
+let EmployeeData = ''
 
 getEmployees()
 
@@ -113,12 +113,14 @@ async function getCompanyPositions() {
       response2 = await axios(config)
       // console.log('Log 3', response2.data);
     } catch (e) {
-      console.log('Line 94 - caught exception!', e, 'Data = ', response2.data);
+      if (response.status != '404') {
+        console.log('Line 94 - caught exception!', e, 'Data = ', response2.data);
+      }
     }
 
     EmployeeData = EmployeeData + JSON.stringify(response2.data) + ','
 
-    fs.writeFileSync('Employees.json', EmployeeData + ']}');
+    fs.writeFileSync('Employees.json', EmployeeData);
   }
 }
 
