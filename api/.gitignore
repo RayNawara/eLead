@@ -1,6 +1,9 @@
 # Dependency directories
 node_modules/
 
+scratch/
+authorization-code-example-app/
+
 # Ignore .json files
 Activities.json
 Activities2.json
